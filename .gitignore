@@ -33,7 +33,7 @@ CatalogueMVC/.classpath
 .factorypath
 
 # PDT-specific (PHP Development Tools)
-**/.buildpath
+CatalogueMVC/.buildpath
 
 # sbteclipse plugin
 .target
