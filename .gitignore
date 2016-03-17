@@ -1,5 +1,5 @@
-CatalogueMVC/build/
 
+CatalogueMVC/build/**
 **/.metadata
 **/bin/
 tmp/
