@@ -1,6 +1,6 @@
 
-.metadata
-bin/
+**/.metadata
+**/bin/
 tmp/
 *.tmp
 *.bak
@@ -27,13 +27,13 @@ local.properties
 .cproject
 
 # JDT-specific (Eclipse Java Development Tools)
-.classpath
+**/.classpath
 
 # Java annotation processor (APT)
 .factorypath
 
 # PDT-specific (PHP Development Tools)
-.buildpath
+**/.buildpath
 
 # sbteclipse plugin
 .target
