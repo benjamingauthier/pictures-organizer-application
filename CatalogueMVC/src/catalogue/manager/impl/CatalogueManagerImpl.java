@@ -2,11 +2,15 @@ package catalogue.manager.impl;
 
 import java.util.HashMap;
 
+import org.springframework.stereotype.Component;
+
 import catalogue.bean.Photo;
 import catalogue.dao.DAOFactory;
 import catalogue.dao.XmlDAOFactory;
 import catalogue.service.CatalogueManager;
 
+
+@Component  
 public class CatalogueManagerImpl implements CatalogueManager {
 
 	// private PersonneDao personneDao;
@@ -29,10 +33,19 @@ public class CatalogueManagerImpl implements CatalogueManager {
 	}
 
 	@Override
-	public void creerCatalogue() {
+	public void creerCatalogue() throws Exception {
 		getDOAFactory().getCatalogueDAO().createCatalogue();
-
+System.out.println("toto");
 	}
+	
+	
+	@Override
+	public HashMap<Integer, Photo> getListPhoto() {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
+
 
 	@Override
 	public void modifierCatalogue() {
@@ -64,12 +77,7 @@ public class CatalogueManagerImpl implements CatalogueManager {
 
 	}
 
-	@Override
-	public HashMap<Integer, Photo> getListPhoto() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public int countCatalogues() {
 		// TODO Auto-generated method stub

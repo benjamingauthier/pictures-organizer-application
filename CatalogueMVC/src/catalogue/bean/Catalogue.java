@@ -2,6 +2,10 @@ package catalogue.bean;
 
 import java.util.HashMap;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+
+@XmlRootElement
 public class Catalogue {
 
 	// private String fileUrl;

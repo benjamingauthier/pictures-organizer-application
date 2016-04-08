@@ -6,7 +6,7 @@ import catalogue.bean.Photo;
 
 public interface CatalogueManager {
 
-	public void creerCatalogue();
+	public void creerCatalogue() throws Exception;
 
 	public void modifierCatalogue();
 

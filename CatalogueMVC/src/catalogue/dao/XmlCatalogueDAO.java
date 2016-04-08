@@ -11,25 +11,25 @@ import catalogue.bean.Photo;
  * This class can contain all xml file operation.
  *
  */
+
 public class XmlCatalogueDAO implements CatalogueDAO {
 
 	private File xmlFile = null;
 	private DAOFactory daoFactory = null;
+	private static final String XML_FILE_NAME = "catalogue.xml";
+	private CatalogueXMLConverter converter ;
 
 	public XmlCatalogueDAO(DAOFactory daoFactory) {
-
-		this.xmlFile = new File("F:\\mes cours\\MIAGE\\XML\\TD_Projet\\catalogue.xml");
+System.out.println("create catalogue");
+	//	this.xmlFile = new File("F:\\mes cours\\MIAGE\\XML\\TD_Projet\\catalogue.xml");
 		this.daoFactory = daoFactory;
-
+		converter = new CatalogueXMLConverter(XML_FILE_NAME);
 	}
 
 	@Override
-	public Catalogue createCatalogue() {
+	public Catalogue createCatalogue() throws Exception {
 		// TODO Auto-generated method stub
-		if (xmlFile.exists()) {
-
-		}
-		return null;
+		return converter.xmlToObject();
 	}
 
 	@Override

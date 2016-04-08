@@ -5,7 +5,7 @@ import catalogue.bean.Photo;
 
 public interface CatalogueDAO {
 	
-	public Catalogue createCatalogue();
+	public Catalogue createCatalogue() throws Exception;
 	
 	public void deleteCatalogue(int Id);
 	

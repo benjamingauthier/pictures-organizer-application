@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT catalogue (photo+,sujet+)>
+<!ELEMENT photo (titre,commentaire,htag+,date_modif)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT date_modif (#PCDATA)>
+<!ELEMENT commentaire (#PCDATA)>
+<!ELEMENT htag (#PCDATA)>
+<!ELEMENT sujet EMPTY>
+
+<!ATTLIST photo taille CDATA #REQUIRED>
+<!ATTLIST photo src CDATA #REQUIRED>
+<!ATTLIST photo resolution CDATA #REQUIRED>
+<!ATTLIST photo extention CDATA #REQUIRED>
+<!ATTLIST photo signale CDATA #REQUIRED>
+<!ATTLIST photo jaime (oui|non) "non">
+
+<!ATTLIST sujet importance  (interessant|nonInteressant|default) "default">
+<!ATTLIST sujet nom CDATA #REQUIRED>
+
+
+
+
+
+

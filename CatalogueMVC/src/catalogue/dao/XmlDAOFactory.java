@@ -2,7 +2,7 @@ package catalogue.dao;
 
 public  class XmlDAOFactory extends DAOFactory{
 	
-	public static  final String URLFile="F:\\mes cours\\MIAGE\\XML\\TD_Projet\\catalogue.xml";
+	//public static  final String URLFile="F:\\mes cours\\MIAGE\\XML\\TD_Projet\\catalogue.xml";
 	
 	
 	
@@ -11,6 +11,8 @@ public  class XmlDAOFactory extends DAOFactory{
 	}
 	
 	 public CatalogueDAO getCatalogueDAO() {
+			
+
 		    return new XmlCatalogueDAO(this);
 		  }
 
