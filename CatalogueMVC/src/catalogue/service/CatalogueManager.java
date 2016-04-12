@@ -3,10 +3,11 @@ package catalogue.service;
 import java.util.HashMap;
 
 import catalogue.bean.Photo;
+import catalogue.bean.Catalogue;
 
 public interface CatalogueManager {
 
-	public void creerCatalogue() throws Exception;
+	public Catalogue creerCatalogue() throws Exception;
 
 	public void modifierCatalogue();
 

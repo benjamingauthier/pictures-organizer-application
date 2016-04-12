@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
 import catalogue.bean.Photo;
+import catalogue.bean.Catalogue;
 import catalogue.dao.DAOFactory;
 import catalogue.manager.impl.CatalogueManagerImpl;
 
@@ -40,10 +41,12 @@ public class HomeController extends AbstractController{
 		
 		// HashMap<Integer, Photo> listPhoto = catalogueManagerImpl.getListPhoto();
 		
-		 catalogueManagerImpl.creerCatalogue();
+		 Catalogue cat = catalogueManagerImpl.creerCatalogue();
 		 String Mess = "Abstract Controller Test"; 
 		  ModelAndView modelAndView = new ModelAndView("home");
 		  modelAndView.addObject("message", Mess); 
+		  modelAndView.addObject("listPhoto", cat.getListPhoto());
+		  modelAndView.addObject("imagePath", getServletContext().getInitParameter("imagePath"));
 		  
 		 return  modelAndView;
 	}

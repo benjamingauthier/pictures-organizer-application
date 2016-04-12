@@ -9,6 +9,11 @@
 <title>Home</title>
 </head>
 <body>
+
+
+<c:forEach var="photo" items="${listPhoto}"> 
+	<img src="public/images/${photo.value.getTitre()}" />
+</c:forEach>
 <c:out value="${message}"/>
 </body>
 </html>

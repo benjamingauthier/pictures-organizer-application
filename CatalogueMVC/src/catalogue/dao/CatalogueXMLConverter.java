@@ -50,15 +50,14 @@ public class CatalogueXMLConverter {
 			
 			String src ="", extension="", titre="", commentaire="", htag="", taille="" ,resolution="", date_modif="", mentionJaime="", isSignale="";
 			int photoID = 1;
-
 			//System.out.println("----------------------------");
 			for (int temp = 0; temp < nList.getLength(); temp++) {
-				photoID++;
+				
 				Node nNode = nList.item(temp);
 			//	System.out.println("\nCurrent Element :" + nNode.getNodeName());
 
 				NodeList refNodes = nNode.getChildNodes();
-
+				
 				for (int x = 0; x < refNodes.getLength(); x++) {
 					Node n = refNodes.item(x);
 				
@@ -98,17 +97,16 @@ public class CatalogueXMLConverter {
 					
 					mentionJaime = nNode.getAttributes().getNamedItem("jaime").getNodeValue();
 					extension =nNode.getAttributes().getNamedItem("extention").getNodeValue();
-					isSignale= nNode.getAttributes().getNamedItem("extention").getNodeValue();
+					isSignale= nNode.getAttributes().getNamedItem("signale").getNodeValue();
 					resolution= nNode.getAttributes().getNamedItem("resolution").getNodeValue();
 					
 					Photo currentPhoto = new Photo(src, extension, titre, commentaire, htag, resolution);
 					currentPhoto.setId(photoID);
 					
 					monCatalogue.ajouterPhoto(currentPhoto);
-					
-					
-
+				
 				}
+				photoID++;
 
 			}
 			
@@ -121,12 +119,12 @@ public class CatalogueXMLConverter {
 	public Catalogue xmlToObject() throws Exception {
 		JAXBContext jc = JAXBContext.newInstance(Catalogue.class);
 		unmarshaller = jc.createUnmarshaller();
-		 File f = new File("F:\\mes cours\\MIAGE\\XML\\TD_Projet\\catalogue.xml");
+		 File f = new File("/Users/benjamingauthier/Documents/M1/S8/pictures-organizer-application/data/catalogue.xml");
 
 	//	Catalogue catalogue = (Catalogue) unmarshaller.unmarshal(f);
 		 
 		 
-		 Catalogue catalogue = buildCatalogue("F:\\mes cours\\MIAGE\\XML\\TD_Projet\\catalogue.xml");
+		 Catalogue catalogue = buildCatalogue("/Users/benjamingauthier/Documents/M1/S8/pictures-organizer-application/data/catalogue.xml");
 		
 		
 		return catalogue;
