@@ -1,126 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE catalogue SYSTEM "catalogue.dtd">
 <?xml-stylesheet type="text/xsl" href= "catalogue.xsl" ?>
-<catalogue>
-  <photo src="images/autowp.ru_lamborghini_350gtv_10.jpg" taille="743679" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_350gtv_10.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_350gtv_10.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_350gtv_10.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:34</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_350gtv_11.jpg" taille="536952" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_350gtv_11.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_350gtv_11.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_350gtv_11.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:34</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_350gtv_6.jpg" taille="677289" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_350gtv_6.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_350gtv_6.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_350gtv_6.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:34</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_350gtv_8.jpg" taille="640842" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_350gtv_8.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_350gtv_8.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_350gtv_8.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:34</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_countach_lp400_10.jpg" taille="396918" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_countach_lp400_10.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_countach_lp400_10.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_countach_lp400_10.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:34</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_diablo_47.jpg" taille="1263329" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_diablo_47.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_diablo_47.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_diablo_47.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:34</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_diablo_vt_6.0_23.jpg" taille="988317" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_diablo_vt_6.0_23.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_diablo_vt_6.0_23.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_diablo_vt_6.0_23.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_espada_3.jpg" taille="665352" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_espada_3.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_espada_3.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_espada_3.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_gallardo_93.jpg" taille="1063983" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_gallardo_93.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_gallardo_93.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_gallardo_93.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_gallardo_polizia_1.jpg" taille="727223" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_gallardo_polizia_1.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_gallardo_polizia_1.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_gallardo_polizia_1.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_gallardo_s.e._2.jpg" taille="541189" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_gallardo_s.e._2.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_gallardo_s.e._2.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_gallardo_s.e._2.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_gallardo_s.e._3.jpg" taille="516979" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_gallardo_s.e._3.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_gallardo_s.e._3.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_gallardo_s.e._3.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_gallardo_superleggera_51.jpg" taille="720430" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_gallardo_superleggera_51.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_gallardo_superleggera_51.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_gallardo_superleggera_51.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_jarama_400_10.jpg" taille="1520399" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_jarama_400_10.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_jarama_400_10.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_jarama_400_10.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_jarama_400_11.jpg" taille="1272394" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_jarama_400_11.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_jarama_400_11.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_jarama_400_11.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_lm002_9.jpg" taille="1015916" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_lm002_9.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_lm002_9.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_lm002_9.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_murcielago_roadster_24.jpg" taille="135313" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_murcielago_roadster_24.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_murcielago_roadster_24.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_murcielago_roadster_24.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_reventon_58.jpg" taille="700015" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_reventon_58.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_reventon_58.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_reventon_58.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_reventon_59.jpg" taille="990786" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_reventon_59.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_reventon_59.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_reventon_59.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <photo src="images/autowp.ru_lamborghini_silhouette_3.jpg" taille="1617657" jaime="non" extention=".jpg" signale="0" resolution="1024*768">
-    <titre>autowp.ru_lamborghini_silhouette_3.jpg</titre>
-    <commentaire>autowp.ru_lamborghini_silhouette_3.jpg:La Lamborghini Gallardo est une voiture de sport du constructeur automobile italien Lamborghini. Sa conception est dirigée par Audi, propriétaire de la marque depuis 1998. </commentaire>
-    <htag>autowp.ru_lamborghini_silhouette_3.jpgSuperleggera. </htag>
-    <date_modif>04/02/2016 02:27:35</date_modif>
-  </photo>
-  <sujet importance="default" nom="lamborguini catalogue" />
-</catalogue>
+<bibliotheque>
+	<catalogue id ="1" titre="catalogue_voiture_love">
+	  <photo src="images/autowp.ru_lamborghini_350gtv_10.jpg" id="1" taille="743679" extention=".jpg">
+		<titre>autowp.ru_lamborghini_350gtv_10.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_350gtv_11.jpg" id="2" taille="536952" extention=".jpg">
+		<titre>autowp.ru_lamborghini_350gtv_11.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_350gtv_6.jpg" id="3" taille="677289" extention=".jpg">
+		<titre>autowp.ru_lamborghini_350gtv_6.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_350gtv_8.jpg" id="4" taille="640842" extention=".jpg">
+		<titre>autowp.ru_lamborghini_350gtv_8.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_countach_lp400_10.jpg" id="5" taille="396918" extention=".jpg">
+		<titre>autowp.ru_lamborghini_countach_lp400_10.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_diablo_47.jpg" id="6" taille="1263329" extention=".jpg">
+		<titre>autowp.ru_lamborghini_diablo_47.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_diablo_vt_6.0_23.jpg" id="7" taille="988317" extention=".jpg">
+		<titre>autowp.ru_lamborghini_diablo_vt_6.0_23.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_espada_3.jpg" id="8" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_espada_3.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_gallardo_93.jpg" id="9" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_gallardo_93.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_gallardo_polizia_1.jpg" id="10" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_gallardo_polizia_1.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_gallardo_s.e._2.jpg" id="11" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_gallardo_s.e._2.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_gallardo_s.e._3.jpg" id="12" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_gallardo_s.e._3.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_gallardo_superleggera_51.jpg" id="13" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_gallardo_superleggera_51.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_jarama_400_10.jpg" id="14" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_jarama_400_10.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_jarama_400_11.jpg" id="15" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_jarama_400_11.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_lm002_9.jpg" id="16" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_lm002_9.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_murcielago_roadster_24.jpg" id="17" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_murcielago_roadster_24.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_reventon_58.jpg" id="18" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_reventon_58.jpg</titre>
+	  </photo>
+	</catalogue>
+	<catalogue id ="2" titre="vacance_usa">
+	  <photo src="images/autowp.ru_lamborghini_reventon_59.jpg" id="19" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_reventon_59.jpg</titre>
+	  </photo>
+	  <photo src="images/autowp.ru_lamborghini_silhouette_3.jpg" id="20" taille="665352" extention=".jpg">
+		<titre>autowp.ru_lamborghini_silhouette_3.jpg</titre>
+	  </photo>
+	</catalogue>
+</bibliotheque>

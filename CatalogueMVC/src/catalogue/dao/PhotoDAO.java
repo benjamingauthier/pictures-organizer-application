@@ -7,6 +7,6 @@ public interface PhotoDAO {
 
 	public void updatePhoto();
 
-	
+	public void deletePhoto();
 
 }

@@ -13,10 +13,8 @@ public interface CatalogueDAO {
 	
 	public void addPhoto(Photo p);
 	
-	public void deletePhoto(Photo p);
+	public void deletePhoto(Catalogue cat, Photo p);
 	
 	public Photo getPhoto(int Id);
-	
-	
 	
 }

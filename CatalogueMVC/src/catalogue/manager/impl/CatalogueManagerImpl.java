@@ -37,7 +37,6 @@ public class CatalogueManagerImpl implements CatalogueManager {
 	@Override
 	public Catalogue creerCatalogue() throws Exception {
 		return getDOAFactory().getCatalogueDAO().createCatalogue();
-//System.out.println("toto");
 	}
 	
 	
@@ -68,9 +67,8 @@ public class CatalogueManagerImpl implements CatalogueManager {
 	}
 
 	@Override
-	public void supprimerPhoto(Photo ph) {
-		// TODO Auto-generated method stub
-
+	public void supprimerPhoto(Catalogue cat, Photo ph) throws Exception {
+		getDOAFactory().getCatalogueDAO().deletePhoto(cat, ph);
 	}
 
 	@Override

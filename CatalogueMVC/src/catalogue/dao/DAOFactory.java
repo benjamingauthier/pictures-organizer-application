@@ -8,6 +8,8 @@ public abstract class DAOFactory {
 	
 	public abstract CatalogueDAO getCatalogueDAO();
 	
+	public abstract BibliothequeDAO getBibliothequeDAO();
+	
 	public abstract PhotoDAO getPhotoDAO();
 	
 	public static DAOFactory getDAOFactory(int whichFactory) {

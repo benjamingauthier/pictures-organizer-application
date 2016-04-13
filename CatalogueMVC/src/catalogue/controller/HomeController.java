@@ -10,8 +10,9 @@ import org.springframework.web.servlet.mvc.AbstractController;
 
 import catalogue.bean.Photo;
 import catalogue.bean.Catalogue;
+import catalogue.bean.Bibliotheque;
 import catalogue.dao.DAOFactory;
-import catalogue.manager.impl.CatalogueManagerImpl;
+import catalogue.manager.impl.BibliothequeManagerImpl;
 
 
 
@@ -23,16 +24,16 @@ public class HomeController extends AbstractController{
 	 */
 
 	
-	private CatalogueManagerImpl catalogueManagerImpl;
+	private BibliothequeManagerImpl bibliothequeManagerImpl;
 	
 	public HomeController(){
-		this.catalogueManagerImpl=new CatalogueManagerImpl(DAOFactory.XML);
+		this.bibliothequeManagerImpl=new BibliothequeManagerImpl(DAOFactory.XML);
 	}
 	
 	
-	public void setCatalogueManagerImpl(CatalogueManagerImpl catalogueManagerImpl){
+	public void setCatalogueManagerImpl(BibliothequeManagerImpl bibliothequeManagerImpl){
 		
-		this.catalogueManagerImpl=catalogueManagerImpl;
+		this.bibliothequeManagerImpl=bibliothequeManagerImpl;
 		
 	}
 	
@@ -41,12 +42,22 @@ public class HomeController extends AbstractController{
 		
 		// HashMap<Integer, Photo> listPhoto = catalogueManagerImpl.getListPhoto();
 		
-		 Catalogue cat = catalogueManagerImpl.creerCatalogue();
+		 /*Catalogue cat = catalogueManagerImpl.creerCatalogue();
 		 String Mess = "Abstract Controller Test"; 
 		  ModelAndView modelAndView = new ModelAndView("home");
 		  modelAndView.addObject("message", Mess); 
 		  modelAndView.addObject("listPhoto", cat.getListPhoto());
 		  modelAndView.addObject("imagePath", getServletContext().getInitParameter("imagePath"));
+		  
+
+		  
+		  	catalogueManagerImpl.supprimerPhoto(cat, cat.getListPhoto().get(1));*/
+		
+		  Bibliotheque b = bibliothequeManagerImpl.creerBibliotheque();
+		  String Mess = "Abstract Controller Test"; 
+		  ModelAndView modelAndView = new ModelAndView("home");
+		  modelAndView.addObject("b", b.getListCatalogue()); 
+		
 		  
 		 return  modelAndView;
 	}
