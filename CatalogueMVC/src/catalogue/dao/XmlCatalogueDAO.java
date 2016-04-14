@@ -57,10 +57,9 @@ public class XmlCatalogueDAO implements CatalogueDAO {
 	}
 
 	@Override
-	public void deletePhoto(Catalogue cat, Photo p) {
-		cat.supprimerPhoto(p);
+	public void deletePhoto(String fileUrl, Catalogue cat, Photo p) {
 		try {
-			converter.deletePhoto(XML_FILE_NAME, p, cat);
+			converter.deletePhoto(fileUrl, p, cat);
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

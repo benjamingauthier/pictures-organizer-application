@@ -67,8 +67,9 @@ public class CatalogueManagerImpl implements CatalogueManager {
 	}
 
 	@Override
-	public void supprimerPhoto(Catalogue cat, Photo ph) throws Exception {
-		getDOAFactory().getCatalogueDAO().deletePhoto(cat, ph);
+	public void supprimerPhoto(String fileUrl, Catalogue cat, Photo ph) throws Exception {
+		getDOAFactory().getCatalogueDAO().deletePhoto(fileUrl, cat, ph);
+		cat.supprimerPhoto(ph);
 	}
 
 	@Override

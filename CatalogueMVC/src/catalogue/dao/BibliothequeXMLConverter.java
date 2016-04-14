@@ -43,9 +43,7 @@ public class BibliothequeXMLConverter {
 	
 	
 	private  Bibliotheque buildBibliotheque(String fileUrl) throws ParserConfigurationException, SAXException, IOException {
-		
-		//	HashMap<Integer, Photo> listPhoto=new HashMap<>();
-		
+
 			Bibliotheque maBiblio = new Bibliotheque();
 
 
@@ -55,8 +53,6 @@ public class BibliothequeXMLConverter {
 			
 			Document doc = builder.parse(inputFile);
 			doc.getDocumentElement().normalize();
-			//System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-			
 			
 			NodeList nListCatalogue = doc.getElementsByTagName("catalogue");
 					
@@ -124,30 +120,41 @@ public class BibliothequeXMLConverter {
 	
 	public void deletePhoto(String fileUrl, Photo ph, Catalogue cat) throws ParserConfigurationException, SAXException, IOException {
 		try {
-		      File inputFile = new File("/Users/benjamingauthier/Documents/M1/S8/pictures-organizer-application/data/"+fileUrl); 	    	
+		      File inputFile = new File(fileUrl); 	    	
 		      DocumentBuilderFactory docFactory =
 		      DocumentBuilderFactory.newInstance();
 		      DocumentBuilder docBuilder = 
 		      docFactory.newDocumentBuilder();
 		      Document doc = docBuilder.parse(inputFile);
 		      
-		      Node catalogue = doc.getElementsByTagName("catalogue").item(cat.getId());
+		      NodeList catalogues = doc.getElementsByTagName("catalogue");
 		      
-		      NodeList photos = catalogue.getChildNodes();
-		      for (int temp = 0; temp < photos.getLength(); temp++) {
-		         Node photo = photos.item(temp);
-		         Element photoElem = (Element) photo;
-		         if(Integer.parseInt(photoElem.getAttribute("id")) == ph.getId())
-		            catalogue.removeChild(photo);
-		         }
-		         // write the content on console
+		      for (int temp = 0; temp < catalogues.getLength(); temp++) {
+		    	  Node catalogue = catalogues.item(temp);
+		          if (catalogue.getNodeType() == Node.ELEMENT_NODE) {
+		               Element eCatalogue = (Element) catalogue;
+		               if(Integer.parseInt(eCatalogue.getAttribute("id")) == cat.getId()) {
+		            	   NodeList photos = catalogue.getChildNodes();
+		            	   for (int tem = 0; tem < photos.getLength(); tem++) {
+	            			  Node photo = photos.item(tem);
+	        		          if (photo.getNodeType() == Node.ELEMENT_NODE) {
+	        		        	  Element ePhoto = (Element) photo;
+	        		        	  if(Integer.parseInt(ePhoto.getAttribute("id")) == ph.getId()) {
+	        		        		  catalogue.removeChild(photo);
+	        		        	  }
+	        		          }
+		            	   }
+		               }
+		      }
+		      }
+
 		         TransformerFactory transformerFactory = 
 		         TransformerFactory.newInstance();
 		         Transformer transformer = transformerFactory.newTransformer();
 		         DOMSource source = new DOMSource(doc);
-		         System.out.println("-----------Modified File-----------");
-		         StreamResult consoleResult = new StreamResult(System.out);
-		         transformer.transform(source, consoleResult);
+		         StreamResult result = new StreamResult(new File(fileUrl));
+		         transformer.transform(source, result);
+		         
 		      } catch (Exception e) {
 		         e.printStackTrace();
 		      }

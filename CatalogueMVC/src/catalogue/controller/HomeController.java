@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.AbstractController;
 import catalogue.bean.Bibliotheque;
 import catalogue.dao.DAOFactory;
 import catalogue.manager.impl.BibliothequeManagerImpl;
+import catalogue.manager.impl.CatalogueManagerImpl;
 
 @Controller
 @RequestMapping("/catalogue")
@@ -30,18 +31,27 @@ public class HomeController extends AbstractController implements ServletContext
 	
 
 	private BibliothequeManagerImpl bibliothequeManagerImpl;
+	
+	private CatalogueManagerImpl catalogueManagerImpl;
 
 	public HomeController() {
 
 		//System.out.println(this.getServletContext().getRealPath(("/WEB-INF/data/catalogue.xml")));
 	//	System.out.println(context.getRealPath("/WEB-INF/data/catalogue.xml"));
 		this.bibliothequeManagerImpl = new BibliothequeManagerImpl(DAOFactory.XML);
+		this.catalogueManagerImpl = new CatalogueManagerImpl(DAOFactory.XML);
 	}
 	
 	
 	
 
-	public void setCatalogueManagerImpl(BibliothequeManagerImpl bibliothequeManagerImpl) {
+	public void setCatalogueManagerImpl(CatalogueManagerImpl catalogueManagerImpl) {
+
+		this.catalogueManagerImpl = catalogueManagerImpl;
+
+	}
+	
+	public void setBibliothequeManagerImpl(BibliothequeManagerImpl bibliothequeManagerImpl) {
 
 		this.bibliothequeManagerImpl = bibliothequeManagerImpl;
 
@@ -82,7 +92,8 @@ public class HomeController extends AbstractController implements ServletContext
 		Bibliotheque b = bibliothequeManagerImpl.creerBibliotheque(x);
 		ModelAndView modelAndView = new ModelAndView("home");
 		modelAndView.addObject("catalogue", b.getListCatalogue());
-		
+		System.out.println("Test "+catalogueManagerImpl);
+		catalogueManagerImpl.supprimerPhoto(x, b.getListCatalogue().get(1), (b.getListCatalogue().get(1)).getListPhoto().get(2));
 
 		return modelAndView;
 	}

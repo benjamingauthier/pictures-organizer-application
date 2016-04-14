@@ -5,7 +5,7 @@ public  class XmlDAOFactory extends DAOFactory{
 	//public static  final String URLFile="F:\\mes cours\\MIAGE\\XML\\TD_Projet\\catalogue.xml";
 	
 	public CatalogueDAO getCatalogueDAO(){
-		return null;
+		return new XmlCatalogueDAO(this);
 	}
 	
 	public static DAOFactory getInstance(){
@@ -15,8 +15,8 @@ public  class XmlDAOFactory extends DAOFactory{
 	 public BibliothequeDAO getBibliothequeDAO() {
 			
 
-		    return new XmlBibliothequeDAO(this);
-		  }
+	    return new XmlBibliothequeDAO(this);
+	  }
 
 	@Override
 	public PhotoDAO getPhotoDAO() {

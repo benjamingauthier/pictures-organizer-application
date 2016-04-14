@@ -15,7 +15,7 @@ public interface CatalogueManager {
 
 	public void ajouterPhoto(Photo ph);
 
-	public void supprimerPhoto(Catalogue cat, Photo ph) throws Exception;
+	public void supprimerPhoto(String fileUrl, Catalogue cat, Photo ph) throws Exception;
 
 	public void modifierPhoto(Photo ph);
 
