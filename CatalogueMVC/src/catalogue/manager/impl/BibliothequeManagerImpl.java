@@ -54,7 +54,9 @@ public class BibliothequeManagerImpl implements BibliothequeManager {
 	}
 
 	@Override
-	public void supprimerCatalogue(Catalogue c) {
+	public void supprimerCatalogue(String fileUrl, Catalogue c, Bibliotheque b) {
+		getDOAFactory().getBibliothequeDAO().deleteCatalogue(fileUrl, c);
+		b.supprimerCatalogue(c);
 		// TODO Auto-generated method stub
 
 	}

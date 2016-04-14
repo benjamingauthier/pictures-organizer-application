@@ -10,4 +10,6 @@ public interface BibliothequeDAO {
 	
 	public void addCatalogue(Catalogue c);
 	
+	public void deleteCatalogue(String fileUrl, Catalogue c);
+	
 }

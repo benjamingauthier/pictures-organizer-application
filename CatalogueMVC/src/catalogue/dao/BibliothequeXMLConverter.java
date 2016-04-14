@@ -159,6 +159,43 @@ public class BibliothequeXMLConverter {
 		         e.printStackTrace();
 		      }
 	}
+	
+	public void deleteCatalogue(String fileUrl, Catalogue cat) throws ParserConfigurationException, SAXException, IOException {
+		try {
+		      File inputFile = new File(fileUrl); 	    	
+		      DocumentBuilderFactory docFactory =
+		      DocumentBuilderFactory.newInstance();
+		      DocumentBuilder docBuilder = 
+		      docFactory.newDocumentBuilder();
+		      Document doc = docBuilder.parse(inputFile);
+		      
+		      System.out.println("First child "+doc.getElementsByTagName("bibliotheque").item(0));
+		      
+		      Node bibliotheque = doc.getElementsByTagName("bibliotheque").item(0);
+		      
+		      NodeList catalogues = doc.getElementsByTagName("catalogue");
+		      
+		      for (int temp = 0; temp < catalogues.getLength(); temp++) {
+		    	  Node catalogue = catalogues.item(temp);
+		          if (catalogue.getNodeType() == Node.ELEMENT_NODE) {
+		               Element eCatalogue = (Element) catalogue;
+		               if(Integer.parseInt(eCatalogue.getAttribute("id")) == cat.getId()) {
+		            	   bibliotheque.removeChild(catalogue);
+		               }
+		          }
+		      }
+
+	         TransformerFactory transformerFactory = 
+	         TransformerFactory.newInstance();
+	         Transformer transformer = transformerFactory.newTransformer();
+	         DOMSource source = new DOMSource(doc);
+	         StreamResult result = new StreamResult(new File(fileUrl));
+	         transformer.transform(source, result);
+		         
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }
+	}
 
 	public Bibliotheque xmlToObject(String fileUrl) throws Exception {
 		
