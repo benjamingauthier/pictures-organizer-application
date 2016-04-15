@@ -34,8 +34,8 @@ public class BibliothequeManagerImpl implements BibliothequeManager {
 	}
 
 	@Override
-	public Bibliotheque creerBibliotheque() throws Exception {
-		return getDOAFactory().getBibliothequeDAO().createBibliotheque();
+	public Bibliotheque creerBibliotheque(String fileUrl) throws Exception {
+		return getDOAFactory().getBibliothequeDAO().createBibliotheque(fileUrl);
 	}
 	
 	

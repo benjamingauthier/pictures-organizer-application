@@ -2,7 +2,9 @@ package catalogue.dao;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
+import javax.servlet.ServletContext;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
@@ -14,6 +16,10 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -24,16 +30,16 @@ import catalogue.bean.*;
 
 public class BibliothequeXMLConverter {
 
-	private Marshaller marshaller;
-	private Unmarshaller unmarshaller;
-	
-	private String file;
-	
+
 	public BibliothequeXMLConverter(String file){
-		
-		this.file=file;
-		
+		//System.out.println(context.getRealPath("/WEB-INF/data/catalogue.xml")); 
 	}
+	
+	
+	
+		public String getRealPath(ServletContext context){
+			return context.getRealPath("/WEB-INF/data/catalogue.xml");
+		}
 	
 	
 	private  Bibliotheque buildBibliotheque(String fileUrl) throws ParserConfigurationException, SAXException, IOException {
@@ -147,16 +153,9 @@ public class BibliothequeXMLConverter {
 		      }
 	}
 
-	public Bibliotheque xmlToObject() throws Exception {
-		JAXBContext jc = JAXBContext.newInstance(Bibliotheque.class);
-		unmarshaller = jc.createUnmarshaller();
-		 File f = new File("/Users/benjamingauthier/Documents/M1/S8/pictures-organizer-application/data/catalogue.xml");
-
-	//	Catalogue catalogue = (Catalogue) unmarshaller.unmarshal(f);
-		 
-		 
-		 Bibliotheque bibliotheque = buildBibliotheque("/Users/benjamingauthier/Documents/M1/S8/pictures-organizer-application/data/catalogue.xml");
+	public Bibliotheque xmlToObject(String fileUrl) throws Exception {
 		
+		 Bibliotheque bibliotheque = buildBibliotheque(fileUrl);
 		
 		return bibliotheque;
 	}

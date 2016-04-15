@@ -7,7 +7,7 @@ import catalogue.bean.Catalogue;
 
 public interface BibliothequeManager {
 	
-	public Bibliotheque creerBibliotheque() throws Exception;	
+	public Bibliotheque creerBibliotheque(String fileUrl) throws Exception;	
 	
 	public void ajouterCatalogue(Catalogue c);
 
