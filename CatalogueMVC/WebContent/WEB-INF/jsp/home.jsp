@@ -9,15 +9,6 @@
 <title>Home</title>
 </head>
 <body>
-   
-<c:forEach var="catalogue" items="${catalogues}">
-	<c:forEach var="photos" items="${catalogue.value.getListPhoto()}">
-		<c:forEach var="photo" items="${photos}">
-			<li>
-				<img style="width:100%" src=" data/${photo.value.getSource() }"> 
-			</li>
-		</c:forEach>
-	</c:forEach>
-</c:forEach>
+
 </body>
 </html>

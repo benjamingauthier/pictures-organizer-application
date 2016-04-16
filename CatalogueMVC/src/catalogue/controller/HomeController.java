@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
 import catalogue.bean.Bibliotheque;
+import catalogue.bean.Photo;
 import catalogue.dao.DAOFactory;
 import catalogue.manager.impl.BibliothequeManagerImpl;
 import catalogue.manager.impl.CatalogueManagerImpl;
@@ -93,6 +94,9 @@ public class HomeController extends AbstractController implements ServletContext
 		ModelAndView modelAndView = new ModelAndView("home");
 		modelAndView.addObject("catalogues", b.getListCatalogue());
 		System.out.println("Test "+catalogueManagerImpl);
+		Photo ph = new Photo("images/TEST.jpg", ".jpg", "Photo test");
+		ph.setId(12);
+		catalogueManagerImpl.ajouterPhoto(x, b.getListCatalogue().get(1), ph);
 		//catalogueManagerImpl.supprimerPhoto(x, b.getListCatalogue().get(1), (b.getListCatalogue().get(1)).getListPhoto().get(2));
 		//bibliothequeManagerImpl.supprimerCatalogue(x, b.getListCatalogue().get(2), b);
 		return modelAndView;

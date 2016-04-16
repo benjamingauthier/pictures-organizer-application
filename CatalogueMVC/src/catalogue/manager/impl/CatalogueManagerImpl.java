@@ -61,8 +61,10 @@ public class CatalogueManagerImpl implements CatalogueManager {
 	}
 
 	@Override
-	public void ajouterPhoto(Photo ph) {
+	public void ajouterPhoto(String fileUrl, Catalogue cat, Photo ph) {
 		// TODO Auto-generated method stub
+		getDOAFactory().getCatalogueDAO().addPhoto(fileUrl, ph, cat);
+		cat.ajouterPhoto(ph);
 
 	}
 

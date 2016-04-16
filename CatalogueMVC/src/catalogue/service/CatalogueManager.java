@@ -13,7 +13,7 @@ public interface CatalogueManager {
 
 	public void supprimerCatalogue();
 
-	public void ajouterPhoto(Photo ph);
+	public void ajouterPhoto(String fileUrl, Catalogue cat, Photo ph);
 
 	public void supprimerPhoto(String fileUrl, Catalogue cat, Photo ph) throws Exception;
 

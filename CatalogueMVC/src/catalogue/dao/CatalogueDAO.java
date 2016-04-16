@@ -11,7 +11,7 @@ public interface CatalogueDAO {
 	
 	public void updateCatalogue();
 	
-	public void addPhoto(Photo p);
+	public void addPhoto(String fileUrl, Photo p, Catalogue cat);
 	
 	public void deletePhoto(String fileUrl, Catalogue cat, Photo p);
 	

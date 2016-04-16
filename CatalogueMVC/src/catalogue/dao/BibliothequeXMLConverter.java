@@ -22,6 +22,7 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Text;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -117,6 +118,50 @@ public class BibliothequeXMLConverter {
 			return maBiblio;
 		//	System.out.println(listPhoto.size());
 		}
+	
+	public void instertPhoto(String fileUrl, Photo ph, Catalogue cat) throws ParserConfigurationException, SAXException, IOException {
+		try {
+		      File inputFile = new File(fileUrl); 	    	
+		      DocumentBuilderFactory docFactory =
+		      DocumentBuilderFactory.newInstance();
+		      DocumentBuilder docBuilder = 
+		      docFactory.newDocumentBuilder();
+		      Document doc = docBuilder.parse(inputFile);
+		      
+		      NodeList catalogues = doc.getElementsByTagName("catalogue");
+		      
+		      
+		      for (int temp = 0; temp < catalogues.getLength(); temp++) {
+		    	  Node catalogue = catalogues.item(temp);
+		          if (catalogue.getNodeType() == Node.ELEMENT_NODE) {
+		               Element eCatalogue = (Element) catalogue;
+		               if(Integer.parseInt(eCatalogue.getAttribute("id")) == cat.getId()) {
+		            	   NodeList photos = catalogue.getChildNodes();
+		            	   Element photo = doc.createElement("photo");
+		            	   photo.setAttribute("src", ph.getSource());
+		            	   photo.setAttribute("id", Integer.toString(ph.getId()));
+		            	   photo.setAttribute("taille", Integer.toString(ph.getTaille()));
+		            	   photo.setAttribute("extention", ph.getExtension());
+		            	   Element titre = doc.createElement("titre");
+		            	   Text titreText = doc.createTextNode(ph.getTitre());
+		            	   titre.appendChild(titreText);
+		            	   photo.appendChild(titre);
+		            	   catalogue.appendChild(photo);   	   
+		               }
+		          }	
+		      }
+
+		         TransformerFactory transformerFactory = 
+		         TransformerFactory.newInstance();
+		         Transformer transformer = transformerFactory.newTransformer();
+		         DOMSource source = new DOMSource(doc);
+		         StreamResult result = new StreamResult(new File(fileUrl));
+		         transformer.transform(source, result);
+		         
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }
+	}
 	
 	public void deletePhoto(String fileUrl, Photo ph, Catalogue cat) throws ParserConfigurationException, SAXException, IOException {
 		try {

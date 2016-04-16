@@ -51,9 +51,20 @@ public class XmlCatalogueDAO implements CatalogueDAO {
 	}
 
 	@Override
-	public void addPhoto(Photo p) {
+	public void addPhoto(String fileUrl, Photo p, Catalogue cat) {
 		// TODO Auto-generated method stub
-
+		try {
+			converter.instertPhoto(fileUrl, p, cat);
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
