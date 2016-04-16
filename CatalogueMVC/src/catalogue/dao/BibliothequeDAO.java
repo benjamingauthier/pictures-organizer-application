@@ -8,7 +8,7 @@ public interface BibliothequeDAO {
 	
 	public Bibliotheque createBibliotheque(String fileUrl) throws Exception;
 	
-	public void addCatalogue(Catalogue c);
+	public void addCatalogue(String fileUrl, Catalogue c);
 	
 	public void deleteCatalogue(String fileUrl, Catalogue c);
 	

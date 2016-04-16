@@ -36,14 +36,23 @@ public class XmlBibliothequeDAO implements BibliothequeDAO {
 
 	@Override
 	public Bibliotheque createBibliotheque(String fileUrl) throws Exception {
-		// TODO Auto-generated method stub
 		return converter.xmlToObject(fileUrl);
 	}
 
 	@Override
-	public void addCatalogue(Catalogue c) {
-		// TODO Auto-generated method stub
-		
+	public void addCatalogue(String fileUrl, Catalogue c) {
+		try {
+			converter.instertCatalogue(fileUrl, c);
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Override
@@ -61,24 +70,4 @@ public class XmlBibliothequeDAO implements BibliothequeDAO {
 			e.printStackTrace();
 		}
 	}
-
-
-	/*@Override
-	public void addPhoto(Photo p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void deletePhoto(Photo p) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Catalogue getPhoto(int Id) {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
-
 }

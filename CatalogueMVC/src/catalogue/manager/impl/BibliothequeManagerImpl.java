@@ -19,8 +19,6 @@ public class BibliothequeManagerImpl implements BibliothequeManager {
 	private int mode = -1;
 
 	public BibliothequeManagerImpl(int mode) {
-		// TODO Auto-generated constructor stub
-
 		this.mode = mode;
 	}
 
@@ -46,26 +44,15 @@ public class BibliothequeManagerImpl implements BibliothequeManager {
 		return null;
 	}
 
-
 	@Override
-	public void ajouterCatalogue(Catalogue c) {
-		// TODO Auto-generated method stub
-
+	public void ajouterCatalogue(String fileUrl, Catalogue c, Bibliotheque b) {
+		getDOAFactory().getBibliothequeDAO().addCatalogue(fileUrl, c);
+		b.ajouterCatalogue(c);
 	}
 
 	@Override
 	public void supprimerCatalogue(String fileUrl, Catalogue c, Bibliotheque b) {
 		getDOAFactory().getBibliothequeDAO().deleteCatalogue(fileUrl, c);
 		b.supprimerCatalogue(c);
-		// TODO Auto-generated method stub
-
 	}
-
-	@Override
-	public void modifierCatalogue(Catalogue c) {
-		// TODO Auto-generated method stub
-
-	}
-
-
 }

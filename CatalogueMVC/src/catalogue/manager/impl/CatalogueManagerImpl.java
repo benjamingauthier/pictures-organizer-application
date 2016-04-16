@@ -32,13 +32,7 @@ public class CatalogueManagerImpl implements CatalogueManager {
 			return XmlDAOFactory.getInstance();
 		else
 			return null;
-	}
-
-	@Override
-	public Catalogue creerCatalogue() throws Exception {
-		return getDOAFactory().getCatalogueDAO().createCatalogue();
-	}
-	
+	}	
 	
 	@Override
 	public HashMap<Integer, Photo> getListPhoto() {
@@ -47,22 +41,8 @@ public class CatalogueManagerImpl implements CatalogueManager {
 		return null;
 	}
 
-
-	@Override
-	public void modifierCatalogue() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimerCatalogue() {
-		// TODO Auto-generated method stub
-
-	}
-
 	@Override
 	public void ajouterPhoto(String fileUrl, Catalogue cat, Photo ph) {
-		// TODO Auto-generated method stub
 		getDOAFactory().getCatalogueDAO().addPhoto(fileUrl, ph, cat);
 		cat.ajouterPhoto(ph);
 
@@ -73,20 +53,7 @@ public class CatalogueManagerImpl implements CatalogueManager {
 		getDOAFactory().getCatalogueDAO().deletePhoto(fileUrl, cat, ph);
 		cat.supprimerPhoto(ph);
 	}
-
-	@Override
-	public void modifierPhoto(Photo ph) {
-		// TODO Auto-generated method stub
-
-	}
-
 	
-	@Override
-	public int countCatalogues() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 	@Override
 	public int countPhotos() {
 		// TODO Auto-generated method stub

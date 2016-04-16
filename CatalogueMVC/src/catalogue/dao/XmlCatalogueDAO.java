@@ -32,25 +32,6 @@ public class XmlCatalogueDAO implements CatalogueDAO {
 	}
 
 	@Override
-	public Catalogue createCatalogue() throws Exception {
-		// TODO Auto-generated method stub
-		
-			return new Catalogue();
-	}
-
-	@Override
-	public void deleteCatalogue(int Id) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void updateCatalogue() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void addPhoto(String fileUrl, Photo p, Catalogue cat) {
 		// TODO Auto-generated method stub
 		try {

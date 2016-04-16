@@ -14,7 +14,11 @@ public class Catalogue {
 	private HashMap<Integer, Photo> listPhoto = new HashMap<>();
 
 	public Catalogue() {
-		// this.fileUrl = fileUrl;
+		
+	}
+	
+	public Catalogue(String titre) {
+		this.titre = titre;
 	}
 	
 	public Integer getId() {
