@@ -91,10 +91,10 @@ public class HomeController extends AbstractController implements ServletContext
 
 		Bibliotheque b = bibliothequeManagerImpl.creerBibliotheque(x);
 		ModelAndView modelAndView = new ModelAndView("home");
-		modelAndView.addObject("catalogue", b.getListCatalogue());
+		modelAndView.addObject("catalogues", b.getListCatalogue());
 		System.out.println("Test "+catalogueManagerImpl);
 		//catalogueManagerImpl.supprimerPhoto(x, b.getListCatalogue().get(1), (b.getListCatalogue().get(1)).getListPhoto().get(2));
-		bibliothequeManagerImpl.supprimerCatalogue(x, b.getListCatalogue().get(2), b);
+		//bibliothequeManagerImpl.supprimerCatalogue(x, b.getListCatalogue().get(2), b);
 		return modelAndView;
 	}
 
