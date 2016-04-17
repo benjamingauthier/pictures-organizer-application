@@ -9,6 +9,6 @@
 <title>Home</title>
 </head>
 <body>
-<p>You shouldn't be there. coquinou</p>
+<p>You shouldn't be there.</p>
 </body>
 </html>

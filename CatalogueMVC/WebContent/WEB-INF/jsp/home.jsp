@@ -44,7 +44,7 @@
     <!-- CSS Customization -->
     <link rel="stylesheet" href="public/css/custom.css">
     
-<title>Insert title here</title>
+<title>Cat'Log</title>
 </head>
 <body class="header-fixed">
 	<div class="wrapper">

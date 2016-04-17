@@ -18,7 +18,7 @@
 
     <jsp:include page="/WEB-INF/jsp/element/css.jsp" />
     
-<title>Insert title here</title>
+<title>Aide</title>
 </head>
 <body class="header-fixed">
 	<div class="wrapper">
@@ -76,7 +76,14 @@
 				<p><strong>DAO</strong> : le DAO est la couche en relation directe avec la data. On y retrouve toutes les méthodes d’interactions avec cette dernière. La force de cette architecture est le fait qu’elle nous permet d’avoir que très peu de modification dans le projet, lors d’un changement de technologies de stockage de cette dernière. Un passage de XML à SQL par exemple.</p>
 				<p><strong>Service</strong> : le service est l’interface de notre manager.</p>
 				<p><strong>Manager</strong> : le manager joue un rôle essentiel dans notre architecture. Pour toutes les méthodes d’interaction avec les objets, il est chargé de mettre à jour, à la fois la couche applicative (dans le bean), mais aussi la couche data (dans le DAO).</p>
-				<p><strong>Controller</strong> : le controller est en relation directe avec le client. Son rôle est de faire le lien entre la vue et la data. A travers le protocole GET il renvoie la donnée nécessaire, et inversement, à travers le protocole POST, il enregistre la data fournie par la vue.</p>
+				<p><strong>Controller</strong> : le controller est en relation directe avec le client. Son rôle est de faire le lien entre la vue et la data. A travers le protocole GET il renvoie la donnée nécessaire, et inversement, à travers le protocole POST, il enregistre la data fournie par la vue.</p><br>
+				
+				<h2>WebService</h2>
+				<p>Le web services est implémenté avec le REST qui utilise le protocole http.<br>
+				L’envoie des requêtes se fait avec Ajax pour la récupération des données du serveur.<br>
+				Pour lancer le web service une fenêtre apparaisse au lancement de l’application pour entrer le nom du host, dans notre cas c’est http://localhost:9080.<br>
+				Le format de données récupérées est sous forme de JSON.<br>				</p>
+				
 	        </div>
 	        
 	        

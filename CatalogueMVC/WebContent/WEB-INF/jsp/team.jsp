@@ -18,7 +18,7 @@
 
     <jsp:include page="/WEB-INF/jsp/element/css.jsp" />
     
-<title>Insert title here</title>
+<title>L'équipe</title>
 </head>
 <body class="header-fixed">
 	<div class="wrapper">
