@@ -60,7 +60,7 @@ public class Photo {
 		this.creationDate = creationDate;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 

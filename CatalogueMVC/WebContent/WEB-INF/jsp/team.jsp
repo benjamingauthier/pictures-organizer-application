@@ -16,33 +16,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
 
-    <!-- Web Fonts -->
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	
-    <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/blocks.css">
-
-    <!-- CSS Header and Footer -->
-    <link rel="stylesheet" href="public/css/header-default.css">
-    <link rel="stylesheet" href="public/css/footer-v1.css">
-
-    <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="public/css/animate.css">
-    <link rel="stylesheet" href="public/css/line-icons.css">
-    <link rel="stylesheet" href="public/css/font-awesome.min.css">
-    <link rel="stylesheet" href="public/css/cubeportfolio.min.css">
-    <link rel="stylesheet" href="public/css/custom-cubeportfolio.css">
-    
-    <link rel="stylesheet" href="public/css/ie8.css">
-	<link rel="stylesheet" href="public/css/plugin.css">
-    <link rel="stylesheet" href="public/css/app.css">
-    <link rel="stylesheet" href="public/css/style-switcher.css">
-    
-    <!-- CSS Customization -->
-    <link rel="stylesheet" href="public/css/custom.css">
+    <jsp:include page="/WEB-INF/jsp/element/css.jsp" />
     
 <title>Insert title here</title>
 </head>
@@ -70,19 +44,19 @@
 	
 	        <div class="row team-v6 margin-bottom-60">
 	            <div class="col-md-3 col-sm-6 md-margin-bottom-50">
-	                <img class="img-responsive" src="../public/amine.jpg" alt="amine">
+	                <img class="img-responsive" src="${pageContext.request.contextPath}/public/images/team/amine.jpg" alt="amine">
 	                <span>Amine</span>
 	            </div>
 	            <div class="col-md-3 col-sm-6 md-margin-bottom-50">
-	                <img class="img-responsive" src="assets/img/team/img4-md.jpg" alt="ben">
+	                <img class="img-responsive" src="${pageContext.request.contextPath}/public/images/team/ben.jpg" alt="ben">
 	                <span>Benjamin</span>
 	            </div>
 	            <div class="col-md-3 col-sm-6 sm-margin-bottom-50">
-	                <img class="img-responsive" src="assets/img/team/img2-md.jpg" alt="audrey">
+	                <img class="img-responsive" src="${pageContext.request.contextPath}/public/images/team/aud.jpg" alt="audrey">
 	                <span>Audrey</span>
 	            </div>
 	            <div class="col-md-3 col-sm-6">
-	                <img class="img-responsive" src="assets/img/team/img1-md.jpg" alt="rihta">
+	                <img class="img-responsive" src="${pageContext.request.contextPath}/public/images/team/rhita.jpg" alt="rihta">
 	                <span>Rihta</span>
 	            </div>
 	        </div><!--/end team v6-->
@@ -101,33 +75,6 @@
 
 		<jsp:include page="/WEB-INF/jsp/element/footer.jsp" />
 	</div>
-<!-- JS Global Compulsory -->
-<script src="public/js/jquery.min.js"></script>
-<script src="public/js/jquery-migrate.min.js"></script>
-<script src="public/js/bootstrap.min.js"></script>
-
-<!-- JS Implementing Plugins -->
-<script src="public/js/back-to-top.js"></script>
-<script src="public/js/smoothScroll.js"></script>
-<script src="public/js/jquery.cubeportfolio.min.js"></script>
-
-
-<!-- JS Customization -->
-<script src="public/js/custom.js"></script>
-
-<!-- JS Page Level -->
-<script src="public/js/app.js"></script>
-<script src="public/js/cube-portfolio-3.js"></script>
-
-<script type="text/javascript">
-    jQuery(document).ready(function() {
-        App.init();
-    });
-</script>
-<!--[if lt IE 9]>
-    <script src="assets/plugins/respond.js"></script>
-    <script src="assets/plugins/html5shiv.js"></script>
-    <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-<![endif]-->
+<jsp:include page="/WEB-INF/jsp/element/js.jsp" />
 </body>
 </html>

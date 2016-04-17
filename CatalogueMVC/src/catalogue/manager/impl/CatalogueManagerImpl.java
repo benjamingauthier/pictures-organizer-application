@@ -59,5 +59,21 @@ public class CatalogueManagerImpl implements CatalogueManager {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	
+	@Override
+	public int getMaxId(HashMap<Integer, Photo> photos) {
+		if(photos.isEmpty())
+			return 1;
+		HashMap.Entry<Integer, Photo> maxEntry = null;
+		
+		for (HashMap.Entry<Integer, Photo> entry : photos.entrySet())
+		{
+		    if (maxEntry == null || entry.getValue().getId() .compareTo(maxEntry.getValue().getId()) > 0)
+		    {
+		        maxEntry = entry;
+		    }
+		}
+		
+		return maxEntry.getKey();
+	}
 }

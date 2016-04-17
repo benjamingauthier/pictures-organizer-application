@@ -12,39 +12,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="../public/css/favicon.ico">
+    
+      <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
 
     <!-- Web Fonts -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	
-    <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/css/style.css">
-    <link rel="stylesheet" href="../public/css/blocks.css">
 
-    <!-- CSS Header and Footer -->
-    <link rel="stylesheet" href="../public/css/header-default.css">
-    <link rel="stylesheet" href="../public/css/footer-v1.css">
+    <jsp:include page="/WEB-INF/jsp/element/css.jsp" />
 
-    <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="../public/css/animate.css">
-    <link rel="stylesheet" href="../public/css/line-icons.css">
-    <link rel="stylesheet" href="../public/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../public/css/cubeportfolio.min.css">
-    <link rel="stylesheet" href="../public/css/custom-cubeportfolio.css">
     
-    <link rel="stylesheet" href="../public/css/ie8.css">
-	<link rel="stylesheet" href="../public/css/plugin.css">
-    <link rel="stylesheet" href="../public/css/app.css">
-    <link rel="stylesheet" href="../public/css/style-switcher.css">
-    
-    <!-- CSS Customization -->
-    <link rel="stylesheet" href="../public/css/custom.css">
-    
-<title>Insert title here</title>
+<title><c:out value="${titre}"/></title>
 </head>
 <body class="header-fixed">
 	<div class="wrapper">
@@ -52,8 +32,10 @@
 		<!--=== Breadcrumbs v3 ===-->
 	    <div class="breadcrumbs-v3 img-v1">
 	        <div class="container text-center">
-	            <p>CATALOGUES</p>
-	            <h1>SELECTIONNER LE CATALOGUE</h1>
+	             <p><c:out value="${titre}"/></p><br>
+	            <button type="button" class="back-green btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		  				Ajouter<i style="padding-left: 10px;" class="fa fa-plus" aria-hidden="true"></i>
+				</button>
 	        </div><!--/end container-->
 	    </div>
 	    <!--=== End Breadcrumbs v3 ===-->
@@ -62,11 +44,6 @@
     <div class="cube-portfolio">
         <div class="content-xs">
             <div id="filters-container" class="cbp-l-filters-text content-xs">
-                <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div> |
-                <div data-filter=".identity" class="cbp-filter-item"> Identity </div> |
-                <div data-filter=".web-design" class="cbp-filter-item"> Web Design </div> |
-                <div data-filter=".graphic" class="cbp-filter-item"> Graphic </div> |
-                <div data-filter=".logos" class="cbp-filter-item"> Logo </div>
             </div><!--/end Filters Container-->
         </div>
 
@@ -75,14 +52,14 @@
 	            <div class="cbp-item graphic">
 	                <div class="cbp-caption">
 	                    <div class="cbp-caption-defaultWrap">
-	                        <img src="../public/${photo.value.getSource()}" alt="${photo.value.getTitre()}">
+	                        <img src="${pageContext.request.contextPath}/public/${photo.value.getSource()}" alt="${photo.value.getTitre()}">
 	                    </div>
 	                    <div class="cbp-caption-activeWrap">
 	                        <div class="cbp-l-caption-alignCenter">
 	                            <div class="cbp-l-caption-body">
 	                                <ul class="link-captions">
-	                                	<li><a href="../delete/${catalogueId}/photo/${photo.value.getId()}" class=""><i class="back-rouge red rounded-x fa fa-minus" aria-hidden="true"></i></a></li>
-			                            <li><a href="../public/${photo.value.getSource()}" class="cbp-lightbox"><i class="back-green rounded-x fa fa-search"></i></a></li>
+	                                	<li><a href="#" data-href="../delete/${catalogueId}/photo/${photo.value.getId()}" class="" data-toggle="modal" data-target="#confirm-delete"><i class="back-rouge red rounded-x fa fa-minus" aria-hidden="true"></i></a></li>
+			                            <li><a href="${pageContext.request.contextPath}/public/${photo.value.getSource()}" class="cbp-lightbox"><i class="back-green rounded-x fa fa-search"></i></a></li>
 	                                </ul>
 	                                <div class="cbp-l-grid-agency-title"><c:out value="${photo.value.getTitre()}"/></div>
 	                            </div>
@@ -94,36 +71,60 @@
         </div><!--/end Grid Container-->
     </div>
     <!--=== End Cube-Portfdlio ===-->
+    <!--=== Start Modal ===-->	    
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Ajouter une photo</h4>
+		      </div>
+		      <div class="modal-body">
+		        <!--<form method="POST" action="${pageContext.request.contextPath}/catalogue/add/${catalogueId}/photo" enctype="multipart/form-data">  -->
+		        <form method="POST" action="${pageContext.request.contextPath}/UploadController?catId=${catalogueId}" enctype="multipart/form-data"> 
+		        	<div class="form-group">
+					  <label for="titre">Titre :</label>
+					  <input class="form-control" id="titre" name="titre"></input>
+					</div>
+					<div class="form-group">
+					  <label for="image">Image :</label>
+					  <input type="file" class="form-control" id="file" name="file"></input>
+					</div>
+					<button type="submit" class="back-green btn btn-primary">Ajouter</button>
+		        </form>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<!--=== End Modal ===-->
+		
+		<!--=== start confirm Modal ===-->
+		<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                Confirmation
+		            </div>
+		            <div class="modal-body">
+		                Etes-vous sûr de vouloir supprimer cette photo ?
+		            </div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+		                <a class="btn btn-danger btn-ok">Oui</a>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--=== start confirm Modal ===-->
 
 		<jsp:include page="/WEB-INF/jsp/element/footer.jsp" />
 	</div>
-<!-- JS Global Compulsory -->
-<script src="../public/js/jquery.min.js"></script>
-<script src="../public/js/jquery-migrate.min.js"></script>
-<script src="../public/js/bootstrap.min.js"></script>
-
-<!-- JS Implementing Plugins -->
-<script src="../public/js/back-to-top.js"></script>
-<script src="../public/js/smoothScroll.js"></script>
-<script src="../public/js/jquery.cubeportfolio.min.js"></script>
-
-
-<!-- JS Customization -->
-<script src="../public/js/custom.js"></script>
-
-<!-- JS Page Level -->
-<script src="../public/js/app.js"></script>
-<script src="../public/js/cube-portfolio-4-fw-ns.js"></script>
-
-<script type="text/javascript">
-    jQuery(document).ready(function() {
-        App.init();
-    });
-</script>
-<!--[if lt IE 9]>
-    <script src="assets/plugins/respond.js"></script>
-    <script src="assets/plugins/html5shiv.js"></script>
-    <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-<![endif]-->
+	<jsp:include page="/WEB-INF/jsp/element/js.jsp" />
+	<script src="${pageContext.request.contextPath}/public/js/cube-portfolio-4-fw-ns.js"></script>
+	<script>
+	$('#confirm-delete').on('show.bs.modal', function(e) {
+   	 $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+	});
+    </script>
 </body>
 </html>

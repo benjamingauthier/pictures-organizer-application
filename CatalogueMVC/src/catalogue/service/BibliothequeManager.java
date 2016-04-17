@@ -15,4 +15,6 @@ public interface BibliothequeManager {
 	public void supprimerCatalogue(String fileUrl, Catalogue c, Bibliotheque b);
 	
 	public HashMap<Integer, Catalogue> getListCatalogue();
+	
+	public int getMaxId(HashMap<Integer, Catalogue> catalogues);
 }

@@ -14,5 +14,6 @@ public interface CatalogueManager {
 	public HashMap<Integer, Photo> getListPhoto();
 
 	public int countPhotos();
-
+	
+	public int getMaxId(HashMap<Integer, Photo> photos);
 }

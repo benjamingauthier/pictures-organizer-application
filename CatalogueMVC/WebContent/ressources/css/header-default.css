@@ -484,17 +484,7 @@
    position: relative; 
 }
 
-.header .dropdown > a:after,
-.header .dropdown-submenu > a:after {
-    top: 8px;
-    right: 9px;
-    font-size: 11px;
-    content: "\f105";
-    position: absolute;
-    font-weight: normal;
-    display: inline-block;
-    font-family: FontAwesome;
-}
+
 
 @media (max-width: 991px) {
   	.header .dropdown-submenu > a:after {
@@ -502,11 +492,6 @@
   	}
 }
 
-.header .dropdown > a:after {
-    top: 9px;
-    right: 15px;
-    content: "\f107";
-}
 
 .header .dropdown-submenu > .dropdown-menu { 
 	top: 3px; 

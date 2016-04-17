@@ -1,10 +1,16 @@
 package catalogue.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
+import javax.servlet.annotation.MultipartConfig;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +31,7 @@ import catalogue.manager.impl.CatalogueManagerImpl;
 
 @Controller
 @RequestMapping("/catalogue")
-
+@MultipartConfig
 public class CatalogueController extends AbstractController implements ServletContextAware {
 
 	/*
@@ -91,6 +97,14 @@ public class CatalogueController extends AbstractController implements ServletCo
 				  return modelAndView;
 			  
 	}
+	@RequestMapping(value = "/help",  method=RequestMethod.GET)
+	public ModelAndView help(HttpServletRequest request, HttpServletResponse arg1) 
+			throws Exception {
+			 
+				  ModelAndView modelAndView = new ModelAndView("help");
+				  return modelAndView;
+			  
+	}
 	
 	@RequestMapping(value = "/",  method=RequestMethod.GET)
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse arg1)
@@ -105,8 +119,8 @@ public class CatalogueController extends AbstractController implements ServletCo
 		for(Integer idCatalogue:b.getListCatalogue().keySet()) {
 			j = 0;
 			Catalogue c = b.getListCatalogue().get(idCatalogue);
-			if (c.getListPhoto() == null) {
-				source = "no_image_available.jpeg";
+			if (c.getListPhoto().isEmpty()) {
+				source = "images/no_image_available.jpeg";
 			}
 			else
 			{
@@ -129,6 +143,16 @@ public class CatalogueController extends AbstractController implements ServletCo
 		return modelAndView;
 	}
 	
+	@RequestMapping(value = "/add",  method=RequestMethod.POST)
+	public ModelAndView addCatalogue(HttpServletRequest request, HttpServletResponse arg1)
+			throws Exception { 
+			Catalogue c = new Catalogue(request.getParameter("titre"));
+			Bibliotheque b = bibliothequeManagerImpl.creerBibliotheque(getPath(request, arg1));
+			c.setId(bibliothequeManagerImpl.getMaxId(b.getListCatalogue())+1);
+			bibliothequeManagerImpl.ajouterCatalogue(getPath(request, arg1), c, b);
+		return new ModelAndView("redirect:/catalogue/");
+	}
+	
 	@RequestMapping(value = "/delete/{id}",  method=RequestMethod.GET)
 	public ModelAndView deleteCatalogue(@PathVariable("id") String id, HttpServletRequest request, HttpServletResponse arg1)
 			throws Exception { 
@@ -136,6 +160,17 @@ public class CatalogueController extends AbstractController implements ServletCo
 			Integer catalogueId = Integer.parseInt(id);
 			bibliothequeManagerImpl.supprimerCatalogue(getPath(request, arg1), b.getListCatalogue().get(catalogueId), b);
 		return new ModelAndView("redirect:/catalogue/");
+	}
+	
+	@RequestMapping(value = "/add/{idCat}/photo/{titrePhoto}/extention/{extention}",  method=RequestMethod.GET)
+	public ModelAndView addCatalogue(@PathVariable("idCat") String idCat, @PathVariable("titrePhoto") String titrePhoto, @PathVariable("extention") String extention, HttpServletRequest request, HttpServletResponse arg1)
+			throws Exception { 
+			Integer catalogueId = Integer.parseInt(idCat);
+			Bibliotheque b = bibliothequeManagerImpl.creerBibliotheque(getPath(request, arg1));
+			Photo p = new Photo("images/"+titrePhoto+"."+extention, extention, titrePhoto);
+			p.setId(catalogueManagerImpl.getMaxId(b.getListCatalogue().get(catalogueId).getListPhoto())+1);
+			catalogueManagerImpl.ajouterPhoto(getPath(request, arg1), b.getListCatalogue().get(catalogueId), p);
+		return new ModelAndView("redirect:/catalogue/view/"+catalogueId);
 	}
 	
 	@RequestMapping(value = "/delete/{idCat}/photo/{idPh}",  method=RequestMethod.GET)

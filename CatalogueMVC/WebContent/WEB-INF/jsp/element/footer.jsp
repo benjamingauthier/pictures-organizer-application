@@ -14,7 +14,7 @@
                 <div class="row">
                     <!-- About -->
                     <div class="col-md-4 md-margin-bottom-40">
-                        <a href="index.html"><img id="logo-footer" class="footer-logo" src="public/images/logo_cat.jpg" alt=""></a>
+                        <a href="/"><img id="logo-footer" class="footer-logo" src="${pageContext.request.contextPath}/public/images/logo_cat.jpg" alt=""></a>
                     	<p>Fondé en 2005 par 4 miagistes, Cat'Log a su se démarquer fasse à ses concurrents tel que Flicker et ce grâce à un puissant outil de gestion de photos. 
                     	<br>
                     	Cat’Log est devenu en quelque temps l'outil indispensable pour gérer vos catalogues photos. We Love Cat’Log.

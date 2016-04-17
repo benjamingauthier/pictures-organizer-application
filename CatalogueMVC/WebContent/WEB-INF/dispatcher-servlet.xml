@@ -51,6 +51,6 @@
                     </list>
                  </property>
          </bean>
-		<mvc:resources mapping="catalogue/public/**" location="/ressources/" />
+		<mvc:resources mapping="/public/**" location="/ressources/" />
 		<mvc:annotation-driven/>
 </beans>

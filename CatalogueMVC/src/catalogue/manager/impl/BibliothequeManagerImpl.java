@@ -55,4 +55,21 @@ public class BibliothequeManagerImpl implements BibliothequeManager {
 		getDOAFactory().getBibliothequeDAO().deleteCatalogue(fileUrl, c);
 		b.supprimerCatalogue(c);
 	}
+	
+	@Override
+	public int getMaxId(HashMap<Integer, Catalogue> catalogues) {
+		if(catalogues.isEmpty())
+			return 1;
+		HashMap.Entry<Integer, Catalogue> maxEntry = null;
+	
+		for (HashMap.Entry<Integer, Catalogue> entry : catalogues.entrySet())
+		{
+		    if (maxEntry == null || entry.getValue().getId().compareTo(maxEntry.getValue().getId()) > 0)
+		    {
+		        maxEntry = entry;
+		    }
+		}
+		
+		return maxEntry.getKey();
+	}
 }
