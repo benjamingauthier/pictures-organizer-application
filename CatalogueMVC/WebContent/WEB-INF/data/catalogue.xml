@@ -4,13 +4,13 @@
 <bibliotheque>
 	<catalogue id ="1" titre="vacance_usa2">
 	  <photo src="images/autowp.ru_lamborghini_350gtv_10.jpg" id="1" taille="743679" extention=".jpg">
-		<titre>autowp.ru_lamborghini_350gtv_10.jpg</titre>
+		<titre>Voiture_cool</titre>
 	  </photo>
 	  <photo src="images/autowp.ru_lamborghini_350gtv_11.jpg" id="2" taille="536952" extention=".jpg">
-		<titre>autowp.ru_lamborghini_350gtv_11.jpg</titre>
+		<titre>voiture_mega_cool</titre>
 	  </photo>
 	  <photo src="images/autowp.ru_lamborghini_350gtv_6.jpg" id="3" taille="677289" extention=".jpg">
-		<titre>autowp.ru_lamborghini_350gtv_6.jpg</titre>
+		<titre>voiture_de_thug</titre>
 	  </photo>
 	  <photo src="images/autowp.ru_lamborghini_350gtv_8.jpg" id="4" taille="640842" extention=".jpg">
 		<titre>autowp.ru_lamborghini_350gtv_8.jpg</titre>

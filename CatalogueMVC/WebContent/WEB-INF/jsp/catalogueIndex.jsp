@@ -80,7 +80,7 @@
 			                        <div class="cbp-l-caption-alignCenter">
 			                            <div class="cbp-l-caption-body">
 			                                <ul class="link-captions no-bottom-space">
-			                                	<li><a href="#" class="cbp-lightbox" data-title="Design Object"><i class="back-rouge red rounded-x fa fa-minus" aria-hidden="true"></i></a></li>
+			                                	<li><a href="delete/${catalogue.value.getId()}" class=""><i class="back-rouge red rounded-x fa fa-minus" aria-hidden="true"></i></a></li>
 			                                    <li><a href="view/${catalogue.value.getId()}"><i class="back-green rounded-x fa fa-search"></i></a></li>
 			                                </ul>
 			                            </div>

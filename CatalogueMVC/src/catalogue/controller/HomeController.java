@@ -7,20 +7,22 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
-import catalogue.bean.*;
+import catalogue.bean.Bibliotheque;
+import catalogue.bean.Catalogue;
 import catalogue.dao.DAOFactory;
 import catalogue.manager.impl.BibliothequeManagerImpl;
-import catalogue.manager.impl.CatalogueManagerImpl;
 
 @Controller
-@RequestMapping("/catalogue")
+@RequestMapping("/home")
 
 public class HomeController extends AbstractController implements ServletContextAware {
 
@@ -31,48 +33,59 @@ public class HomeController extends AbstractController implements ServletContext
 	
 
 	private BibliothequeManagerImpl bibliothequeManagerImpl;
-	
-	private CatalogueManagerImpl catalogueManagerImpl;
 
 	public HomeController() {
 
 		//System.out.println(this.getServletContext().getRealPath(("/WEB-INF/data/catalogue.xml")));
 	//	System.out.println(context.getRealPath("/WEB-INF/data/catalogue.xml"));
 		this.bibliothequeManagerImpl = new BibliothequeManagerImpl(DAOFactory.XML);
-		this.catalogueManagerImpl = new CatalogueManagerImpl(DAOFactory.XML);
 	}
 	
 	
 	
 
-	public void setCatalogueManagerImpl(CatalogueManagerImpl catalogueManagerImpl) {
-
-		this.catalogueManagerImpl = catalogueManagerImpl;
-
-	}
-	
-	public void setBibliothequeManagerImpl(BibliothequeManagerImpl bibliothequeManagerImpl) {
+	public void setCatalogueManagerImpl(BibliothequeManagerImpl bibliothequeManagerImpl) {
 
 		this.bibliothequeManagerImpl = bibliothequeManagerImpl;
 
 	}
 
-	private String getRealPath(HttpServletRequest request, HttpServletResponse response) {
+	
+	@RequestMapping(value = "/view/{id}",  method=RequestMethod.GET)
+	public ModelAndView viewCatalogue(@PathVariable("id") String id, HttpServletRequest request, HttpServletResponse arg1) 
+			throws Exception {
+			  Bibliotheque b = bibliothequeManagerImpl.creerBibliotheque(getPath(request, arg1));
+			  Integer catalogueId = Integer.parseInt(id);
+			  Catalogue c = b.getListCatalogue().get(catalogueId);
+			  
+			  if (c == null) {
+				  ModelAndView modelAndView = new ModelAndView("error_404");
+				  return modelAndView;
+			  } else
+			  {
+				  ModelAndView modelAndView = new ModelAndView("catalogue");
+				  modelAndView.addObject("titre", c.getTitre());
+				  modelAndView.addObject("photos", c.getListPhoto());
+				  return modelAndView;
+			  }
+	}
+	public String getPath(HttpServletRequest request, HttpServletResponse arg1) 
+			throws Exception {
 		HttpSession session = request.getSession();
 		ServletContext sc = session.getServletContext();
-		String x = sc.getRealPath("/WEB-INF/data/catalogue.xml");
-		return x;
+		return sc.getRealPath("/WEB-INF/data/catalogue.xml");
 	}
-
 	@Override
-	@RequestMapping("/")
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse arg1)
 			throws Exception {
 
 		HttpSession session = request.getSession();
 		ServletContext sc = session.getServletContext();
 		String x = sc.getRealPath("/WEB-INF/data/catalogue.xml");
-		System.out.println(x);
+		
+		
+			
+		
 		// HashMap<Integer, Photo> listPhoto =
 		// catalogueManagerImpl.getListPhoto();
 
@@ -91,20 +104,14 @@ public class HomeController extends AbstractController implements ServletContext
 
 		Bibliotheque b = bibliothequeManagerImpl.creerBibliotheque(x);
 		ModelAndView modelAndView = new ModelAndView("home");
-		modelAndView.addObject("catalogues", b.getListCatalogue());
-		System.out.println("Test "+catalogueManagerImpl);
-		Photo ph = new Photo("images/TEST.jpg", ".jpg", "Photo test");
-		ph.setId(12);
-		Catalogue cat = new Catalogue("Catalogue Test");
-		cat.setId(2);
-		//bibliothequeManagerImpl.ajouterCatalogue(x, cat, b);
-		catalogueManagerImpl.ajouterPhoto(x, b.getListCatalogue().get(2), ph);
-		//catalogueManagerImpl.supprimerPhoto(x, b.getListCatalogue().get(1), (b.getListCatalogue().get(1)).getListPhoto().get(2));
-		//bibliothequeManagerImpl.supprimerCatalogue(x, b.getListCatalogue().get(2), b);
+		modelAndView.addObject("catalogue", b.getListCatalogue());
+		
+
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "/list/", method = RequestMethod.GET)
 	@ResponseBody
 	public Bibliotheque list(HttpServletRequest request, HttpServletResponse response) throws Exception {
 

@@ -49,52 +49,55 @@
 <body class="header-fixed">
 	<div class="wrapper">
 		<jsp:include page="/WEB-INF/jsp/element/header.jsp" />
+		
 		<!--=== Breadcrumbs v3 ===-->
 	    <div class="breadcrumbs-v3 img-v1">
 	        <div class="container text-center">
-	            <p>CATALOGUES</p>
-	            <h1>SELECTIONNER LE CATALOGUE</h1>
+	            <p>EQUIPE</p>
+	            <h1>DECOUVREZ L'EQUIPE</h1>
 	        </div><!--/end container-->
 	    </div>
 	    <!--=== End Breadcrumbs v3 ===-->
 
-	    <!--=== Cube-Portfdlio ===-->
-	    <div class="cube-portfolio container margin-bottom-60">
-	    	<div class="content-xs">
-	            <div id="filters-container" class="cbp-l-filters-text content-xs">
-	                <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div> |
-	                <div data-filter=".identity" class="cbp-filter-item"> Identity </div> |
-	                <div data-filter=".web-design" class="cbp-filter-item"> Web Design </div> |
-	                <div data-filter=".graphic" class="cbp-filter-item"> Graphic </div> |
-	                <div data-filter=".logos" class="cbp-filter-item"> Logo </div>
-	            </div><!--/end Filters Container-->
-        	</div>
-	        <div id="grid-container" class="cbp-l-grid-agency">
-	        	<c:forEach var="catalogue" items="${catalogues}"  varStatus="loop">
-			            <div class="cbp-item identity">
-			                <div class="cbp-caption margin-bottom-20">
-			                    <div class="cbp-caption-defaultWrap">
-			                        <img src="public/${sources[loop.index]}" alt="${catalogue.value.getTitre()}">
-			                    </div>
-			                    <div class="cbp-caption-activeWrap">
-			                        <div class="cbp-l-caption-alignCenter">
-			                            <div class="cbp-l-caption-body">
-			                                <ul class="link-captions no-bottom-space">
-			                                	<li><a href="#" class="cbp-lightbox" data-title="Design Object"><i class="back-rouge red rounded-x fa fa-minus" aria-hidden="true"></i></a></li>
-			                                    <li><a href="view/${catalogue.value.getId()}"><i class="back-green rounded-x fa fa-search"></i></a></li>
-			                                </ul>
-			                            </div>
-			                        </div>
-			                    </div>
-			                </div>
-			                <div class="cbp-title-dark">
-			                    <div class="cbp-l-grid-agency-title"><c:out value="${catalogue.value.getTitre()}"/></div>
-			                </div>
-			            </div>
-	            </c:forEach>
-	        </div><!--/end Grid Container-->
+	    <hr class="margin-bottom-60">
+
+	    <!--=== Team v6 ===-->
+	    <div class="container">
+	        <div class="headline-center margin-bottom-60">
+	            <h2>LES MEMBRES</h2>
+	            <p>Etudiants en formation MIAGE à l'Université de Bordeaux.<br>
+	        </div>
+	
+	        <div class="row team-v6 margin-bottom-60">
+	            <div class="col-md-3 col-sm-6 md-margin-bottom-50">
+	                <img class="img-responsive" src="../public/amine.jpg" alt="amine">
+	                <span>Amine</span>
+	            </div>
+	            <div class="col-md-3 col-sm-6 md-margin-bottom-50">
+	                <img class="img-responsive" src="assets/img/team/img4-md.jpg" alt="ben">
+	                <span>Benjamin</span>
+	            </div>
+	            <div class="col-md-3 col-sm-6 sm-margin-bottom-50">
+	                <img class="img-responsive" src="assets/img/team/img2-md.jpg" alt="audrey">
+	                <span>Audrey</span>
+	            </div>
+	            <div class="col-md-3 col-sm-6">
+	                <img class="img-responsive" src="assets/img/team/img1-md.jpg" alt="rihta">
+	                <span>Rihta</span>
+	            </div>
+	        </div><!--/end team v6-->
 	    </div>
-	    <!--=== End Cube-Portfdlio ===-->
+	    <!--=== End Team v6 ===-->
+	
+	    <!--=== Call To Action v2 ===-->
+	    <div class="call-action-v2 parallaxBg">
+	        <div class="container">
+	            <h2>Nous rectrutons !</h2>
+	            <p>Envoyez-nous votre candidature !</p>
+	            <a href="mailto:carval.audrey@gmail.com" class="btn-u">Envoyer</a>
+	        </div>
+	    </div>
+	    <!--=== End Call To Action v2 ===-->
 
 		<jsp:include page="/WEB-INF/jsp/element/footer.jsp" />
 	</div>
