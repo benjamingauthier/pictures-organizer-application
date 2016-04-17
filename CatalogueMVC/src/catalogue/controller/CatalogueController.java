@@ -35,8 +35,7 @@ import catalogue.manager.impl.CatalogueManagerImpl;
 public class CatalogueController extends AbstractController implements ServletContextAware {
 
 	/*
-	 * INJECTION Spring d'un bean Service dans le controleur. Le bean Service
-	 * est configure dans objisapp-service.xml
+	 * INJECTION Spring d'un bean Service dans le controleur. 
 	 */
 	
 

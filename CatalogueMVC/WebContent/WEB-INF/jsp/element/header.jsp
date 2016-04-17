@@ -5,6 +5,7 @@
 
 <html>
 <head>
+  <link rel="shortcut icon" href="public/images/logo.ico">
 </head>
 <body>
 <!--=== Header ===-->
