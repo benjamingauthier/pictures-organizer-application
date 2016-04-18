@@ -1,0 +1,12 @@
+html,body{
+height:100%;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+	height: 250px;
+	margin: 0 auto;
+}
+
+a {
+	cursor: pointer;
+}
